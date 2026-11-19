@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>19/11 – Món quà bí mật dành cho anh ❤️</title>
+<style>
+:root{--pink:#ff6f9f;--deep:#c83e75;--cream:#fff8f3;--ink:#563849;--lav:#f1e9ff;--gold:#ffd978}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:radial-gradient(circle at 15% 15%,#ffe0ec 0,transparent 32%),radial-gradient(circle at 85% 20%,#e9ddff 0,transparent 30%),linear-gradient(135deg,#fff7f2,#ffeaf1 55%,#f5edff);overflow-x:hidden}
+button{font:inherit;cursor:pointer}
+.floaties{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.floaties span{position:absolute;bottom:-50px;opacity:.3;animation:rise linear infinite;font-size:22px}
+@keyframes rise{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+.wrap{position:relative;z-index:1;width:min(900px,92%);margin:0 auto;padding:30px 0 55px}
+.top{text-align:center;margin-bottom:16px}
+.pill{display:inline-block;padding:7px 14px;border-radius:30px;background:#fff9;border:1px solid #fff;font-size:.85rem;color:var(--deep);font-weight:700;letter-spacing:.04em}
+h1{font-size:clamp(2rem,6vw,3.6rem);line-height:1.08;margin:15px 0 8px;color:#bd4779}
+.sub{color:#886779;margin:0}
+.card{background:#ffffffd9;border:1px solid #fff;box-shadow:0 18px 55px #b95b8520;border-radius:28px;padding:clamp(22px,5vw,42px);backdrop-filter:blur(12px)}
+.screen{display:none;animation:pop .45s ease both}.screen.active{display:block}
+@keyframes pop{from{opacity:0;transform:translateY(15px) scale(.985)}to{opacity:1;transform:none}}
+.center{text-align:center}
+.hero-emoji{font-size:clamp(4rem,13vw,7rem);filter:drop-shadow(0 8px 8px #c45b6c22);animation:bob 2.2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-9px) rotate(4deg)}}
+h2{font-size:clamp(1.5rem,4vw,2.15rem);margin:8px 0 12px;color:#b83e73}
+p{line-height:1.7}
+.btn{border:0;border-radius:999px;padding:13px 24px;font-weight:800;color:white;background:linear-gradient(110deg,#ff78a5,#d84d87);box-shadow:0 8px 18px #d84d8730;transition:.2s;display:inline-block}
+.btn:hover{transform:translateY(-2px);filter:saturate(1.1)}
+.btn.secondary{background:#fff;color:#bd4779;border:1px solid #ffd1e1;box-shadow:none}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.progress{height:9px;background:#f8dce7;border-radius:99px;overflow:hidden;margin:20px 0 24px}
+.progress>div{height:100%;width:0;background:linear-gradient(90deg,#ff9fbd,#c95b91);transition:width .35s}
+.meta{display:flex;justify-content:space-between;color:#a16c85;font-size:.9rem;font-weight:700}
+.question{font-size:clamp(1.25rem,4vw,1.7rem);font-weight:800;text-align:center;margin:10px 0 22px}
+.answers{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.answer{padding:15px;border:2px solid #f5d5e2;background:#fff9fc;border-radius:17px;color:#70465a;font-weight:700;text-align:left;transition:.18s}
+.answer:hover{border-color:#f18bb0;background:#fff1f6;transform:translateY(-2px)}
+.answer.correct{border-color:#76c99d;background:#edfff4}.answer.wrong{border-color:#ff9b9b;background:#fff0f0}
+.feedback{min-height:30px;text-align:center;font-weight:700;margin:16px 0 0;color:#bd4779}
+.gifts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0}
+.gift{border:2px solid #f7d7e4;background:linear-gradient(145deg,#fff,#fff0f6);border-radius:20px;padding:20px 10px;min-height:140px;color:#8e4b6b;transition:.2s}
+.gift .emoji{display:block;font-size:3rem;margin-bottom:8px;filter:drop-shadow(0 5px 4px #b84b7620)}
+.gift:hover:not(:disabled){transform:translateY(-5px) rotate(-1deg);border-color:#f28ab0}
+.gift:disabled{opacity:.55;filter:grayscale(.6);cursor:not-allowed}
+.gift.opened{background:#fff8d9;border-color:#f2ca61;opacity:1;filter:none}
+.gift small{display:block;font-weight:800}
+.note{background:#fff7fb;border:1px dashed #efabc5;border-radius:18px;padding:20px;margin:15px 0}
+.note h3{color:#bd4779;margin:0 0 8px}
+.gift-count{font-weight:800;color:#b84b79;text-align:center}
+.letter{max-width:650px;margin:20px auto 0;background:#fffaf5;border:1px solid #f3d8c9;border-radius:8px 8px 22px 22px;padding:clamp(22px,5vw,38px);box-shadow:0 12px 30px #8b53631a;text-align:left;position:relative}
+.letter:before{content:"";position:absolute;inset:9px;border:1px solid #f4e4da;border-radius:5px;pointer-events:none}
+.letter>*{position:relative}
+.signature{font-family:Georgia,serif;font-style:italic;color:#bd4779;font-size:1.25rem;text-align:right;margin-top:22px}
+.hidden{display:none!important}
+#toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:#59384a;color:white;padding:12px 18px;border-radius:30px;opacity:0;pointer-events:none;transition:.25s;z-index:5;box-shadow:0 8px 25px #0002}
+#toast.show{opacity:1}
+.confetti{position:fixed;top:-15px;width:9px;height:14px;z-index:4;animation:fall 2.8s linear forwards;pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.1}}
+footer{text-align:center;color:#a77d91;font-size:.82rem;margin-top:18px}
+@media(max-width:600px){.answers{grid-template-columns:1fr}.gifts{grid-template-columns:repeat(2,1fr)}.gift{min-height:125px;padding:15px 8px}.wrap{padding-top:20px}}
+</style>
+</head>
+<body>
+<div class="floaties" id="floaties"></div>
+<main class="wrap">
+  <header class="top">
+    <span class="pill">19 THÁNG 11 · INTERNATIONAL MEN'S DAY</span>
+    <h1>Hôm nay anh là nhân vật chính! 💗</h1>
+    <p class="sub">Một nhiệm vụ nho nhỏ, món quà to đùng (về mặt tinh thần 😌)</p>
+  </header>
+
+  <section class="card screen active center" id="welcome">
+    <div class="hero-emoji">🐻🎁</div>
+    <h2>Xin chào người thương!</h2>
+    <p>Chào mừng anh đến với <b>“Thử thách nhận quà 19/11”</b>.<br>
+    Muốn mở quà thì phải vượt qua 5 câu hỏi bé xíu trước nha.</p>
+    <p><b>Luật chơi:</b> trả lời đúng mới được tiến đến vòng tiếp theo. Sai thì… hem có quà đâu à nhen 🤭</p>
+    <div class="row"><button class="btn" onclick="startGame()">Bắt đầu nhận quà ✨</button></div>
+  </section>
+
+  <section class="card screen" id="quiz">
+    <div class="meta"><span id="qNumber">CÂU 1 / 5</span><span id="score">0 câu đúng</span></div>
+    <div class="progress"><div id="progressBar"></div></div>
+    <div class="question" id="question"></div>
+    <div class="answers" id="answers"></div>
+    <div class="feedback" id="feedback" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" onclick="nextQuestion()">Câu tiếp theo →</button></div>
+  </section>
+
+  <section class="card screen center" id="gameOver">
+    <div class="hero-emoji">🥲💔</div>
+    <h2>Ôi không… hết cơ hội nhận quà rồi!</h2>
+    <p>Anh đã trả lời sai một câu nên toàn bộ phần quà bị khóa mất rồi. Luật chơi nghiêm túc vậy đó nha! 🤭</p>
+    <div class="note">
+      <h3>Những món quà anh đã bỏ lỡ…</h3>
+      <p>Tiếc chưa? Đây là 6 phần thưởng bí mật mà anh đã có cơ hội chọn 2 món:</p>
+      <div id="missedPrizes"></div>
+    </div>
+    <p>Đừng buồn nhé, vẫn có một người thương anh nhiều lắm. Nhưng lần sau nhớ đọc kỹ câu hỏi! 😝</p>
+    <div class="row">
+      <button class="btn" onclick="restart()">Thử thách lại từ đầu ↻</button>
+    </div>
+  </section>
+
+  <section class="card screen center" id="giftScreen">
+    <div class="hero-emoji">🔓🎁</div>
+    <h2>Vượt ải thành công!</h2>
+    <p>Anh đã chứng minh mình vừa thông minh vừa đáng yêu (đề thi có hơi thiên vị một chút 😝).<br>Có 6 hộp quà bí mật nhưng anh chỉ được chọn đúng 2 hộp thôi. Chọn rồi là không đổi được đâu nhé! 🤭</p>
+    <div class="gift-count" id="giftCount">Đã chọn 0 / 2 món quà</div>
+    <div class="gifts" id="giftGrid"></div>
+    <div class="row"><button class="btn hidden" id="toCardBtn" onclick="showScreen('greeting')">Mở tấm thiệp đặc biệt 💌</button></div>
+  </section>
+
+  <section class="card screen center" id="giftReveal">
+    <div class="hero-emoji" id="revealEmoji">🎁</div>
+    <h2 id="revealTitle">Một món quà dành cho anh</h2>
+    <div class="note"><p id="revealText"></p></div>
+    <div class="row"><button class="btn" onclick="backToGifts()">Quay lại chọn quà</button></div>
+  </section>
+
+  <section class="card screen center" id="greeting">
+    <div class="hero-emoji">💐</div>
+    <span class="pill">A LITTLE NOTE FOR YOU</span>
+    <h2>Chúc mừng ngày 19/11!</h2>
+    <p>Chúc anh luôn vui vẻ, mạnh khỏe, tự tin và gặp thật nhiều điều may mắn. Mong những dự định của anh đều thuận lợi, những ngày mệt mỏi sẽ nhanh qua và mỗi ngày đều có ít nhất một lý do để mỉm cười.</p>
+    <p>Và nhớ nhé: hôm nay anh được quyền nhận lời khen, nhận quà và được chiều một chút. Ngày thường cũng được, nhưng hôm nay có lý do chính đáng hơn! 😎</p>
+    <div class="row"><button class="btn" onclick="openLetter()">Còn một điều cuối cùng… 💌</button></div>
+  </section>
+
+  <section class="card screen center" id="letterScreen">
+    <div class="hero-emoji">💌</div>
+    <h2>Một chiếc tâm thư nhỏ</h2>
+    <p>Gửi anh — người đặc biệt của em</p>
+    <div class="letter">
+      <p>Minnghim khùm,</p>
+      <p>Nhân ngày 19/11, em muốn gửi đến anh một lời cảm ơn thật dễ thương. Cảm ơn anh vì đã xuất hiện, vì những lúc quan tâm, những câu chuyện vu vơ và cả những khoảnh khắc bình thường mà nhờ có anh lại trở nên đáng nhớ.</p>
+      <p>Em không mong anh lúc nào cũng phải mạnh mẽ hay lúc nào cũng phải giỏi giang đâu. Anh cũng có thể mệt, có thể buồn, có thể có những ngày chẳng muốn làm gì cả. Những lúc như vậy, mong anh nhớ rằng luôn có một người muốn lắng nghe, ở bên và cổ vũ anh.</p>
+      <p>Chúc chàng trai của em luôn bình an, giữ được sự nhiệt huyết, làm điều mình thích và đạt được những điều mình mong muốn. Còn nhiệm vụ làm em vui thì… anh đang làm khá tốt, tiếp tục phát huy nha! 🤭</p>
+      <p>Cảm ơn anh vì là anh. Mong chúng ta sẽ còn có thật nhiều ngày vui, nhiều tiếng cười và nhiều kỷ niệm đẹp cùng nhau.</p>
+      <p class="signature">Thương anh thật nhiềuuu! ❤️</p>
+    </div>
+    <div class="row">
+      <button class="btn" onclick="celebrate()">Gửi anh một cái ôm thật to 🤗</button>
+      <button class="btn secondary" onclick="restart()">Chơi lại từ đầu ↻</button>
+    </div>
+  </section>
+  <footer>Được làm bằng một chút yêu thương và rất nhiều sự đáng yêu 💗</footer>
+</main>
+<div id="toast" role="status"></div>
+<script>
+const questions = [
+ {q:"Em có xinh đẹp không?",a:["Chắc chắn là có rồi","Rất xinh đẹp","Không hề","Em là xinh đẹp nhất" ],correct:3,why:"Trời! Chứ sao nữaaa."},
+ {q:"Bình thuờng em nói 'Không sao đâu' là em đang như nào?",a:["Rất có sao đấy nhé","Không sao thật","Em cần anh dỗ, hỏi han", "Trốn trước khi có chuyện xảy ra. 🤣"],correct:2,why:" Ehe em là em bé iuu màaa 🌟"},
+ {q:"Ngày kỉ niệm của chúng ta là ngày nào?",a:["15/09","1/11","Đáp án khác"],correct:2,why:"Tada. Tính ra là 2 ngày lận"},
+ {q:"Em thích ăn món gì nhất trong những món sau đây:",a:["Bánh ngọt","Gà rán","Cá nướng", "Tất cả đáp án trên"],correct:1,why:"Wow Anh iu hiểu em quá dị"},
+ {q:"Câu cuối cùng: Nếu được quay lại ngày đầu tiên gặp em, anh có muốn làm quen với em lần nữa không?",a:["Có, chắc chắn rồi!","Có, nhưng phải suy nghĩ một chút.","Để xem hôm đó em có xinh không.", "Không, vì đã quá hiểu độ khó chiều. 🤣"],correct:0,why:"Đáp án quá đúng! Anh xứng đáng có đuợc nguời yêu dễ thương, xinh đẹp, cute như em. ❤️"}
+];
+const gifts=[
+ {emoji:"🏆",title:"Cúp người thương",text:"Xin trao tặng anh danh hiệu: CHÀNG TRAI ĐÁNG YÊU CỦA NĂM. Giải thưởng không có tiền mặt nhưng có người trao giải luôn cổ vũ anh!"},
+ {emoji:"🍀",title:"Phiếu hoán đổi",text:"Phiếu này được dùng để hoán đổi thân phận, anh sẽ được quyền làm em bé của Lanh iu một ngày.Hạn sử dụng: 14/02/2027"},
+ {emoji:"☕",title:"Phiếu hết giận",text:"Phiếu này có giá trị đổi lấy một lần em chủ đông làm hòa ehee. Hạn sử dụng: 14/02/2027"},
+ {emoji:"💬",title:"Phiếu Lanh làm",text:"Anh có thể yêu cầu em làm điều gì/món gì đó trong khả năng của em. Hạn sử dụng: 14/02/2027"},
+ {emoji:"🎟️",title:"Một cuộc hẹn",text:"Voucher một buổi hẹn hò do Lanh mời. Hạn sử dụng: càng sớm càng tốt!"},
+ {emoji:"❤️",title:"Món quà bí mật",text:"Món quà cuối cùng là một cái ôm thật chặt, một lời cảm ơn và thật nhiều nụ hôn. Quà này không hoàn tiền, chỉ được nhận trực tiếp thôi! 🤭"}
+];
+let current=0,opened=new Set(),answered=0;
+const MAX_GIFTS = 2;
+function showScreen(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
+function startGame(){current=0;answered=0;renderQuestion();showScreen('quiz');}
+function renderQuestion(){
+ const q=questions[current];document.getElementById('qNumber').textContent=`CÂU ${current+1} / ${questions.length}`;
+ document.getElementById('score').textContent=`${answered} câu đúng`;
+ document.getElementById('progressBar').style.width=(current/questions.length*100)+'%';
+ document.getElementById('question').textContent=q.q;
+ document.getElementById('feedback').textContent='';
+ document.getElementById('nextBtn').classList.add('hidden');
+ const box=document.getElementById('answers');box.innerHTML='';
+ q.a.forEach((a,i)=>{const b=document.createElement('button');b.className='answer';b.textContent=String.fromCharCode(65+i)+'. '+a;b.onclick=()=>chooseAnswer(i,b);box.appendChild(b);});
+}
+function chooseAnswer(i,btn){
+ const q=questions[current],all=[...document.querySelectorAll('.answer')];all.forEach(b=>b.disabled=true);
+ if(i===q.correct){btn.classList.add('correct');answered++;document.getElementById('score').textContent=`${answered} câu đúng`;document.getElementById('feedback').textContent='🎉 '+q.why;document.getElementById('nextBtn').classList.remove('hidden');}
+ else{
+   btn.classList.add('wrong');
+   document.getElementById('feedback').textContent='Rất tiếc! Sai một câu là mất quyền nhận quà rồi… 🥲';
+   setTimeout(()=>showGameOver(),1100);
+ }
+}
+function nextQuestion(){current++;if(current<questions.length){renderQuestion();}else{document.getElementById('progressBar').style.width='100%';buildGifts();showScreen('giftScreen');confetti();}}
+function buildGifts(){
+ const grid=document.getElementById('giftGrid');grid.innerHTML='';
+ gifts.forEach((g,i)=>{
+   const b=document.createElement('button');
+   b.className='gift'+(opened.has(i)?' opened':'');
+   b.disabled=opened.has(i)||opened.size>=MAX_GIFTS;
+   b.innerHTML=`<span class="emoji">${opened.has(i)?'✨':'🎁'}</span><small>${opened.has(i)?'Đã chọn':'Hộp quà '+(i+1)}</small>`;
+   b.onclick=()=>openGift(i);
+   grid.appendChild(b);
+ });
+ document.getElementById('giftCount').textContent=`Đã chọn ${opened.size} / ${MAX_GIFTS} món quà`;
+ document.getElementById('toCardBtn').classList.toggle('hidden',opened.size!==MAX_GIFTS);
+}
+function openGift(i){
+ if(opened.size>=MAX_GIFTS || opened.has(i)) return;
+ opened.add(i);
+ const g=gifts[i];
+ document.getElementById('revealEmoji').textContent=g.emoji;
+ document.getElementById('revealTitle').textContent=g.title;
+ document.getElementById('revealText').textContent=g.text;
+ showScreen('giftReveal');
+ confetti();
+}
+function backToGifts(){buildGifts();showScreen('giftScreen');}
+function openLetter(){showScreen('letterScreen');}
+function celebrate(){confetti(100);toast('Ôm thật chặt! Chúc anh 19/11 thật vui ❤️');}
+function showGameOver(){
+ const box=document.getElementById('missedPrizes');
+ box.innerHTML='';
+ gifts.forEach(g=>{
+   const p=document.createElement('p');
+   p.innerHTML=`<b>${g.emoji} ${g.title}:</b> ${g.text}`;
+   box.appendChild(p);
+ });
+ showScreen('gameOver');
+}
+function restart(){current=0;opened.clear();answered=0;buildGifts();startGame();}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200);}
+function confetti(n=55){for(let i=0;i<n;i++){const e=document.createElement('i');e.className='confetti';e.style.left=Math.random()*100+'vw';e.style.background=['#ff79a7','#ffd36e','#b99aff','#8bd8b0','#ff9c83'][i%5];e.style.animationDelay=Math.random()*.7+'s';e.style.transform=`rotate(${Math.random()*180}deg)`;document.body.appendChild(e);setTimeout(()=>e.remove(),3600);}}
+const floaties=document.getElementById('floaties');['♡','✦','♥','✿'].forEach((x,j)=>{for(let i=0;i<5;i++){const s=document.createElement('span');s.textContent=x;s.style.left=Math.random()*100+'%';s.style.animationDuration=(10+Math.random()*12)+'s';s.style.animationDelay=(-Math.random()*18)+'s';s.style.fontSize=(15+Math.random()*18)+'px';floaties.appendChild(s);}});
+</script>
+</body>
+</html>
